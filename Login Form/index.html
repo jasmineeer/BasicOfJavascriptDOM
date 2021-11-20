@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Javascript</title>
+
+    <!-- call Bootstrap Style -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Javascript Area -->
+    <script>
+        function buttonClick() {
+            alert("Belajar Javascript itu membuat pusing menjadi hilang");
+        }
+
+        function confirmation() {
+            let konfirmasi = confirm("Apakah Anda Suka Belajar Web?");
+            if (konfirmasi === true) {
+                alert("Web juga suka kamu");
+            } else {
+                alert("Kamu jahat");
+            }
+        }
+
+        function getName() {
+            let name = prompt("Silahkan ketik nama anda");
+            alert("Oh, nama kamu " + name);
+        }
+
+        // let digunakan untuk deklarasi variabel yang menyimpan berbagai tipe data
+
+
+        function hitungLuas() {
+            let alas = document.getElemenById("alas_segitiga").value;
+            let tinggi = document.getElementById("tinggi_segitiga").value;
+            // Number() -> konversi ke bentuk numeric
+            let hasil = 0.5 * Number(alas) * Number(tinggi);
+            document.getElementById("result").innerHTML ="Luas Segitiga adalah " + hasil;
+
+
+            // perbedaan .value dan .innerHTML
+            // .value -> jika elemen yang dipanggil berupa <input> / <select> 
+            // .innerHTML -> jika elemen yang dipanggil berupa isi yang ada dalam tag HTML
+
+        }
+
+        function login() {
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+
+            if (username === "moklet" && password --- "123") {
+                document.getElementById("message").innerHTML =
+                "<div class='alert alert-success'>Login Berhasil</div>";
+            } else {
+                document.getElementById("message").innerHTML =
+                "<div class='alert alert-danger'>Login Gagal</div>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onmouseover="buttonClick()" class="btn btn-danger">
+        Click Me
+    </button>
+
+    <button class="btn btn-info" onclick="confirmation()">
+        Click for Confirmation!
+    </button>
+
+    <button class="btn btn-success" onclick="getName()">
+        Fill Your Name
+    </button>
+
+    <!-- Card menghitung luas segitiga -->
+    <div class="card col-lg-3 col-md-6 m-2">
+        <!-- card header -->
+        <div class="card-header bg-primary">
+            <h3 class="text-white">Login Form</h3>
+        </div>
+
+        <!-- card footer -->
+        <div class="card-footer bg-white" id="message">
+            <!-- letak alert-->
+        </div>
+
+        <!-- card body -->
+        <div class="card-body">
+            Username
+            <input type="text" class="form-control mb-2" id="username" />
+
+            Password
+            <input type="password" class="form-control mb-2" id="password" />
+
+            <button class="btn btn-primary btn-block" onclick="login()">
+                Login
+            </button>
+        </div>
+
+        
+    </div>
+</body>
+</html>
